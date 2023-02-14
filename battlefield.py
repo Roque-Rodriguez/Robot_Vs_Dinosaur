@@ -2,12 +2,12 @@ from robot import *
 from dinosaur import * 
 from weapon import *
 
-class Battlefeild:
+class Battlefeild():
 
     def __init__(self):
-        self.robot = Robot("Terminator", Weapon)
-        self.dinosaur = Dinosaur("Godzilla", 20)
-        self.weapon = Weapon("Shotgun", 20)
+        self.robot = Robot("Terminator", 100)
+        self.dinosaur = Dinosaur("Godzilla", 20, 100)
+        
 
     def run_game(self):
         self.display_welcome()
@@ -20,13 +20,37 @@ class Battlefeild:
 
     def battle_phase(self):
        
-       while self.robot.health <= 0:
-            self.robot.attack(dinosaur)
-            print(f"{self.name} hit {self.dinosaur.name} and has {self.dinosaur.health} left.")
+        while self.robot.health > 0 and self.dinosaur.health > 0:
+            self.robot.attack(self.dinosaur)
+            self.dinosaur.attack(self.robot)
+        
 
-       while self.dinosaur.health <= 0:
-            self.dinosaur.attack(robot)
-            print(f"{self.name} hit {self.robot.name} and has {self.robot.health} left.")
+    def display_winner(self):
+        if self.robot.health > 1:
+            print(f"{self.robot.name} is the winner.")
+        elif self.dinosaur.heath > 1:
+            print(f"{self.dinosaur.name} is the winner")
+
+
+        # if self.robot.health >= 0:
+        #     self.robot.attack(Dinosaur)
+        # elif self.dinosaur.health > 0:
+        #     self.dinosaur.attack(Robot)
+    
+ 
+ 
+ 
+
+ 
+ 
+ 
+    #    while self.robot.health > 0:
+    #         print(f"{self.robot.name} hit {self.dinosaur.name} and has {self.dinosaur.health} left.")
+    #         self.robot.attack(Dinosaur)
+
+    #    while self.dinosaur.health > 0:
+    #         self.dinosaur.attack(Robot)
+    #         # print(f"{self.name} hit {self.robot.name} and has {self.robot.health} left.")
 
       
       
@@ -41,7 +65,7 @@ class Battlefeild:
         #     self.dinosaur.attack(robot)
         #     print(f"{self.name} hit {self.robot.name} and has {self.robot.health} left.")
 
-    # def display_winner(self):
+    
 
 
             

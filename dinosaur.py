@@ -1,15 +1,15 @@
 
-class Dinosaur:
+class Dinosaur():
 
-    def __init__(self, name, attack_power):
-        self.name = ""
-        self.attack_power = 20
-        self.health = 100
+    def __init__(self, name, attack_power, health):
+        self.name = name
+        self.attack_power = attack_power
+        self.health = health
 
     def attack(self, robot):
-        while self.health <= 0:
-            print(f'{self.name} attacked {robot} with {self.weapon}')
-            robot.health -= self.attack_power
+           robot.health -= self.attack_power
+           print(robot.health)
+      
 
 
      
