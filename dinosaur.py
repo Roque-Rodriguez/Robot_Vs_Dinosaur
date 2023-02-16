@@ -8,7 +8,7 @@ class Dinosaur():
 
     def attack(self, robot):
            robot.health -= self.attack_power
-           print(robot.health)
+           print(f"{self.name} points his laser eyes to {robot.name}, lowing his health to: {robot.health}")
       
 
 
